@@ -62,7 +62,7 @@ args = parser.parse_args()  # onrécupère les args dans une variable pour les t
 
 debut = time.time()         # on peut initialiser une variable temporelle pour calculer le temps que le programmemets à trouver le mot de passe
 
-if args.gen:                #Pour éviter de détailler la logique des conditions si après disons que j'aai fais au mieux pour que tous lesarguments disponibles n'entre pas en conflit, exemple lrosque je veux généré un md5 je vais pas en cracker un en même temps
+if args.gen:                #Pour éviter de détailler la logique des conditions si après disons que j'ai fais au mieux pour que tous les arguments disponibles n'entre pas en conflit, exemple lorsque je veux généré un md5, je ne vais pas en cracker un en même temps etc
     print("[ Le Hash MD5 de " + args.gen + " :" + hashlib.md5(args.gen.encode("utf8")).hexdigest() + " ]")
 elif args.md5:
     print("[Crack Du Hash " + args.md5 + "]")        
@@ -78,9 +78,5 @@ else:
     print("Veuillez choisir le mode -f ou -l (1 à la fois)")
 
 
-print("Durée : " + str(time.time() - debut)) 
-    
+print("Durée : " + str(time.time() - debut))                    #Ici on calcule le temps que cela à durer par rapport à la variable d'initialisation temporelle de base
 
-debut = time.time()
-
-print("Durée : " + str(time.time() - debut) + " secondes")
